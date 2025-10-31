@@ -1,8 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
 import Sequelize from 'sequelize';
-import configModule from '../config/config.js';
+
+const require = createRequire(import.meta.url);
+const configModule = require('../config/config.cjs');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

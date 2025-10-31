@@ -1,21 +1,23 @@
-import 'dotenv/config';
+require('dotenv/config');
 
-export default {
+module.exports = {
   development: {
     username: process.env.DB_USER || 'myuser',
     password: process.env.DB_PASSWORD || 'mypassword',
     database: process.env.DB_NAME || 'mydatabase',
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 5432,
-    dialect: 'postgres'
+    dialect: 'postgres',
+    logging: console.log
   },
   test: {
-    username: process.env.DB_USER || 'myuser',
-    password: process.env.DB_PASSWORD || 'mypassword',
-    database: process.env.DB_NAME || 'mydatabase_test',
+    username: process.env.DB_USER || 'testuser',
+    password: process.env.DB_PASSWORD || 'testpassword',
+    database: process.env.DB_NAME || 'testdatabase',
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 5432,
-    dialect: 'postgres'
+    dialect: 'postgres',
+    logging: false
   },
   production: {
     username: process.env.DB_USER,
@@ -23,6 +25,7 @@ export default {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: 'postgres'
+    dialect: 'postgres',
+    logging: false
   }
 };
