@@ -13,21 +13,21 @@ function Profile({ user }) {
         }}
       >
         <Typography component="h1" variant="h3" gutterBottom>
-          Hello {user.firstName}
+          Hola {user.firstName}
         </Typography>
         <Button
           variant="contained"
           size="large"
           sx={{ mt: 3 }}
         >
-          Update profile
+          Actualizar perfil
         </Button>
         <Button
           variant="outlined"
           size="large"
           sx={{ mt: 2 }}
         >
-          Logout
+          Cerrar sesión
         </Button>
       </Box>
     </Container>

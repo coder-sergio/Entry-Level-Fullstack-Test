@@ -14,7 +14,7 @@ function Login({ onLogin }) {
       // Login failed
       setError('password', {
         type: 'manual',
-        message: 'Invalid credentials',
+        message: 'Credenciales inválidas',
       });
     }
   };
@@ -31,7 +31,7 @@ function Login({ onLogin }) {
       >
         <Paper elevation={3} sx={{ padding: 4, width: '100%' }}>
           <Typography component="h1" variant="h5" align="center" gutterBottom>
-            Login
+            Iniciar sesión
           </Typography>
           <Box component="form" onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>
             <Controller
@@ -39,10 +39,10 @@ function Login({ onLogin }) {
               control={control}
               defaultValue=""
               rules={{
-                required: 'Email is required',
+                required: 'El correo electrónico es requerido',
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: 'Invalid email address',
+                  message: 'Dirección de correo electrónico inválida',
                 },
               }}
               render={({ field }) => (
@@ -50,7 +50,7 @@ function Login({ onLogin }) {
                   {...field}
                   margin="normal"
                   fullWidth
-                  label="Email"
+                  label="Correo electrónico"
                   type="email"
                   autoComplete="email"
                   autoFocus
@@ -64,14 +64,14 @@ function Login({ onLogin }) {
               control={control}
               defaultValue=""
               rules={{
-                required: 'Password is required',
+                required: 'La contraseña es requerida',
               }}
               render={({ field }) => (
                 <TextField
                   {...field}
                   margin="normal"
                   fullWidth
-                  label="Password"
+                  label="Contraseña"
                   type="password"
                   autoComplete="current-password"
                   error={!!errors.password}
@@ -85,7 +85,7 @@ function Login({ onLogin }) {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Iniciar sesión
             </Button>
           </Box>
         </Paper>
